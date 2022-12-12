@@ -2,24 +2,18 @@ import { createSlice } from "@reduxjs/toolkit";
 
 export const displaySlice = createSlice({
     name: 'display',
-    initialState: {
-        display: '',
-        history: []
-    },
+    initialState: '',
     reducers: {
         CAL_VALUE(state, action) {
-            state.display += action.payload
+            state += action.payload
             return state
         },
-        DEL_VALUE(state) {
-            return {
-                ...state, display: ''
-            }
+        DEL_VALUE() {
+            return ''
         },
-        VALUE(state, action) {
-            return {
-                ...state, display: `${eval(action.payload)}`
-            }
+        VALUE(_, action) {
+            return `${eval(action.payload)}`
+
         }
     }
 })

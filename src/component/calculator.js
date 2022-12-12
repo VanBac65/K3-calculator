@@ -1,14 +1,13 @@
 import React from 'react'
-import Button from './button/button'
-import Display from './display/display'
-import './calculator.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { CAL_VALUE, DEL_VALUE, VALUE } from '../app/reducer/displaySlice'
 import { ADD_CAL } from '../app/reducer/historySlice'
+import Button from './button/button'
+import Display from './display/display'
+import './calculator.css'
 
 export default function Calculator() {
-  const display = useSelector(store => store.display.display)
-  console.log('render-display')
+  const display = useSelector(store => store.display)
   const dispatch = useDispatch()
   const handleDisplay = (value) => {
     const action1 = CAL_VALUE(value)
